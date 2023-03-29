@@ -23,13 +23,14 @@ public class VisitorsAgent extends Agent {
 
     @Override
     protected void setup() {
-        System.out.println("Hello! Custom-agent " + VisitorsAgent.class.getName() + " is ready.");
 
         final DFAgentDescription dfd = new DFAgentDescription();
         final ServiceDescription sd = new ServiceDescription();
-        sd.setType(VisitorsAgent.class.getName()); // died tut
+        
+        sd.setType(VisitorsAgent.class.getName());
         sd.setName(VisitorsAgent.class.getName());
         dfd.addServices(sd);
+        
         final ACLMessage[] msg = new ACLMessage[1];
         addBehaviour(new Behaviour() {
             @Override
